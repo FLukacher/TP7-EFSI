@@ -1,127 +1,103 @@
-import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-} from 'react-native';
-
-export default function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>
-          Login App (Apellido, Apellido)
-        </Text>
-      </View>
-
-      {/* Logo */}
-      <Image
-        source={{
-          uri: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg',
-        }}
-        style={styles.logo}
-        resizeMode="contain"
-      />
-
-      {/* Inputs */}
-      <TextInput
-        style={styles.input}
-        placeholder="simon@galaxies.dev"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="********"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-
-      {/* Button */}
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>INGRESAR</Text>
-      </TouchableOpacity>
-
-      {/* Links */}
-      <TouchableOpacity>
-        <Text style={styles.link}>¿Olvidaste la clave?</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity>
-        <Text style={styles.link}>Crear Cuenta</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-}
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
+  marco: {
     flex: 1,
     backgroundColor: '#ECECEC',
+  },
+
+  adaptador: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
 
-  header: {
-    width: '100%',
-    backgroundColor: '#5A00FF',
-    paddingVertical: 15,
+  caja: {
+    width: '85%',
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    padding: 24,
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
 
-  headerTitle: {
-    color: '#FFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-
-  logo: {
+  imagen: {
     width: 180,
     height: 120,
-    marginTop: 30,
     marginBottom: 20,
     backgroundColor: '#FFF',
   },
 
+  titulo: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 20,
+  },
+
+  label: {
+    alignSelf: 'flex-start',
+    fontSize: 14,
+    color: '#555',
+    marginBottom: 4,
+    marginTop: 8,
+  },
+
   input: {
-    width: '80%',
+    width: '100%',
     height: 45,
     backgroundColor: '#FFF',
     borderWidth: 1,
     borderColor: '#8B5CF6',
     borderRadius: 3,
-    marginBottom: 12,
+    marginBottom: 4,
     paddingHorizontal: 10,
   },
 
-  button: {
-    width: '80%',
+  boton: {
+    width: '100%',
     height: 45,
     backgroundColor: '#8B5CF6',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 15,
-    marginBottom: 20,
+    marginTop: 20,
+    borderRadius: 3,
   },
 
-  buttonText: {
+  botonTexto: {
     color: '#FFF',
     fontWeight: 'bold',
+    fontSize: 16,
   },
 
-  link: {
-    color: '#000',
+  mensajeBox: {
+    width: '100%',
+    padding: 12,
+    borderRadius: 4,
+    marginTop: 16,
+  },
+
+  exito: {
+    backgroundColor: '#D4EDDA',
+    borderColor: '#28A745',
+    borderWidth: 1,
+  },
+
+  error: {
+    backgroundColor: '#F8D7DA',
+    borderColor: '#DC3545',
+    borderWidth: 1,
+  },
+
+  mensajeTexto: {
     fontSize: 14,
-    marginVertical: 5,
+    textAlign: 'center',
+    color: '#333',
   },
 });
+
+export default styles;
